@@ -1,0 +1,20 @@
+
+.env               # Игнорируем основной файл с переменными
+.env.local         # Локальные переопределения (если есть)
+.env.*             # Все вариации .env файлов (например, .env.prod)
+
+__pycache__/       # Кеш-папки Python
+*.pyc              # Скомпилированные Python-файлы
+*.pyo              # Оптимизированные Python-файлы
+*.pyd              # Для Windows
+venv/              # Виртуальное окружение (если есть)
+.python-version    # Файл для pyenv (опционально)
+
+# 3. IDE/Редакторы
+.idea/             # JetBrains (PyCharm)
+.vscode/           # Visual Studio Code
+.DS_Store          # macOS служебный файл
+
+# 4. Docker/CI
+docker-compose.override.yml  # Локальные настройки Docker
+*.log              # Лог-файлы
