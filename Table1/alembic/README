@@ -1,3 +1,0 @@
-Generic single-database configuration.
-мне надо ещё сделать серввис и бд отдельно
-cp .env.example .env - скопируйте шаблон и введите свой логин пароль и ключ
