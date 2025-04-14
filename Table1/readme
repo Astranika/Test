@@ -1,0 +1,24 @@
+FastAPI - запустите через docker-compose up -d
+
+
+ Скопируйте файл .env.example в .env
+```bash
+cp .env.example .env - скопируйте шаблон и введите свой логин пароль и ключ
+Copy-Item .env.example .env
+
+docker-compose up --build
+
+
+
+
+
+установить PostgreSQL
+python -m venv venv
+venv\Scripts\activate
+
+Установите библиотеки
+pip install -r requirements.txt
+
+Запуск сервера
+uvicorn app.main:app
+
