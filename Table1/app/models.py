@@ -8,13 +8,13 @@ class Table(SQLModel, table=True):
     name: str = Field(sa_column=Column(String(100), nullable=False))
     seats: int
     location: str = Field(sa_column=Column(String(100), nullable=False))
-    na: int
+
 
 class TableCreate(SQLModel):
     name: str
     seats: int
     location: str
-    na: int
+
 
 
 class Reservation(SQLModel, table=True):
@@ -23,7 +23,6 @@ class Reservation(SQLModel, table=True):
     table_id: int
     reservation_time: datetime
     duration_minutes: int
-    notes: int
 
 class ReservationCreate(SQLModel):
     customer_name: str

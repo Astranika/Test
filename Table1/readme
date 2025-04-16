@@ -1,38 +1,12 @@
 FastAPI - запустите через docker-compose up -d
 
 
- Скопируйте файл .env.example в .env
-```bash
-cp .env.example .env - скопируйте шаблон и введите свой логин пароль и ключ
-Copy-Item .env.example .env
+Скопируйте файл .env.example в файл .env
+
+cp .env.example .env          - Cкопируйте шаблон и введите свой логин пароль и ключ
+Copy-Item .env.example .env   - для power shell (windows)
 
 docker-compose up --build
 
-
-
-python -m venv venv - создайте виртуальное окружение
-venv\Scripts\activate - активируйте виртуальное окружение
-
-Установите библиотеки
-pip install -r requirements.txt
-
-Возможно понадобиться отдельно установить
-pip install greenlet --only-binary :all:
-python -m pip install --upgrade pip
-после выполните
-pip install -r requirements.txt
-
-
-docker compose up -d
-docker compose exec web alembic upgrade head
-
-
-
-установить PostgreSQL
-
-
-
-
-Запуск сервера
-uvicorn app.main:app
-
+docker compose exec app alembic revision --autogenerate -m "0"  создать миграцию
+docker compose exec app alembic upgrade head   - применить миграцию
