@@ -24,6 +24,6 @@ POST запрос для бронирования столика - http://localh
         "reservation_time": "2025-04-16T18:50:00",
         "duration_minutes": 45
     }
-
- http://localhost:8000/reservations/1 - указываем id броинрования которое хотим удалить
- http://localhost:8000/tables//1 - указываем id столика который хотим удалить
+DELETE 
+ http://localhost:8000/reservations/1 - указываем id бронирования которое хотим удалить
+ http://localhost:8000/tables/1 - указываем id столика который хотим удалить
