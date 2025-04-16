@@ -2,6 +2,7 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from sqlalchemy import text
+from sqlmodel import SQLModel
 import os
 import time
 from sqlalchemy.exc import OperationalError
@@ -16,9 +17,7 @@ def init_db():
     retries = 10
     while retries > 0:
         try:
-            #SQLModel.metadata.create_all(engine)
-            with engine.connect() as conn:
-                conn.execute(text("SELECT 1"))
+            SQLModel.metadata.create_all(engine)
             print("Успешное подключение к БД")
             break
         except OperationalError:
