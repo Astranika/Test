@@ -9,3 +9,4 @@ COPY . .
 
 CMD ["python", "run.py"]
 # нужно разобраться с Gunicorn
+

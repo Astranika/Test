@@ -1,12 +1,22 @@
+
 from logging.config import fileConfig
 from alembic import context
-from sqlmodel import SQLModel
+from app.models import Table, Reservation
 import sys
-from app.database import engine
+from app.models import *
 
 sys.path.append("/app")
 
+from dotenv import load_dotenv
+from os.path import abspath, dirname
+load_dotenv()
+
+from app.database import engine
+
+sys.path.append(dirname(dirname(abspath(__file__))))
+
 target_metadata = SQLModel.metadata
+
 
 config = context.config
 if config.config_file_name is not None:
@@ -26,12 +36,14 @@ def run_migrations_offline():
 
 def run_migrations_online():
     connectable = engine
+
     with connectable.connect() as connection:
         context.configure(
             connection=connection,
             target_metadata=target_metadata,
             compare_type=True
         )
+
         with context.begin_transaction():
             context.run_migrations()
 

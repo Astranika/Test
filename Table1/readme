@@ -10,14 +10,28 @@ docker-compose up --build
 
 
 
-
-
-установить PostgreSQL
-python -m venv venv
-venv\Scripts\activate
+python -m venv venv - создайте виртуальное окружение
+venv\Scripts\activate - активируйте виртуальное окружение
 
 Установите библиотеки
 pip install -r requirements.txt
+
+Возможно понадобиться отдельно установить
+pip install greenlet --only-binary :all:
+python -m pip install --upgrade pip
+после выполните
+pip install -r requirements.txt
+
+
+docker compose up -d
+docker compose exec web alembic upgrade head
+
+
+
+установить PostgreSQL
+
+
+
 
 Запуск сервера
 uvicorn app.main:app
