@@ -1,5 +1,4 @@
-FastAPI - запустите через docker-compose up -d
-
+FastAPI приложение для бронирования столиков в ресторане
 
 Скопируйте файл .env.example в файл .env
 
@@ -10,3 +9,21 @@ docker-compose up --build
 
 docker compose exec app alembic revision --autogenerate -m "0"  создать миграцию
 docker compose exec app alembic upgrade head   - применить миграцию
+
+
+POST запрос для создания столика - http://localhost:8000/tables/
+    {
+        "name": "стол",
+        "seats": 2,
+        "location": "Большой зал"
+    }
+POST запрос для бронирования столика - http://localhost:8000/reservations/
+    {
+        "customer_name": "n1",
+        "table_id": 1,
+        "reservation_time": "2025-04-16T18:50:00",
+        "duration_minutes": 45
+    }
+
+ http://localhost:8000/reservations/1 - указываем id броинрования которое хотим удалить
+ http://localhost:8000/tables//1 - указываем id столика который хотим удалить
