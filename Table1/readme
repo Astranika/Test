@@ -4,8 +4,9 @@ FastAPI приложение для бронирования столиков в
 
 cp .env.example .env          - Cкопируйте шаблон и введите свой логин пароль и ключ
 Copy-Item .env.example .env   - для power shell (windows)
-SQLModel.metadata.create_all(engine)
-docker-compose up --build
+в файле .env - введите логин,пароль,имя БД,секретный ключ
+(иногда нужно очистить базу данных docker-compose down -v )
+docker-compose up --build - соберите и запустите
 
 docker compose exec app alembic revision --autogenerate -m "0"  создать миграцию
 docker compose exec app alembic upgrade head   - применить миграцию
