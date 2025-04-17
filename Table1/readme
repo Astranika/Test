@@ -4,7 +4,7 @@ FastAPI приложение для бронирования столиков в
 
 cp .env.example .env          - Cкопируйте шаблон и введите свой логин пароль и ключ
 Copy-Item .env.example .env   - для power shell (windows)
-
+SQLModel.metadata.create_all(engine)
 docker-compose up --build
 
 docker compose exec app alembic revision --autogenerate -m "0"  создать миграцию
