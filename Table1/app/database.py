@@ -27,8 +27,8 @@ def init_db():
     retries = 10
     while retries > 0:
         try:
-            SQLModel.metadata.create_all(engine)
-            #apply_migrations()
+            #SQLModel.metadata.create_all(engine)
+            apply_migrations()
             print("Успешное подключение к БД + успешное применение миграций Alembic")
             break
         except OperationalError:
